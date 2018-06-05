@@ -2,7 +2,7 @@ var inquire = require("inquirer");
 module.exports = {
     chooseBooks: (store) => {
         var books = []
-        store.books.map((elem) => {
+        store.map((elem) => {
             books.push(elem.name)
         })
         var question = [
@@ -37,6 +37,17 @@ module.exports = {
         ]
         return inquire.prompt(question).then((answer) => {
             return (answer.another == 'yes') ? true : false
+        })
+    },
+    chooseCategory: () => {
+        var question = [{
+            name: 'type',
+            type: "list",
+            message: "Select A Category",
+            choices: ["regular", "fiction", "novel"]
+        }]
+        return inquire.prompt(question).then((answer) => {
+            return answer
         })
 
     }
