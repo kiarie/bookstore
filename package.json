@@ -4,7 +4,7 @@
   "description": "This is a BookStore where you rent books in return them",
   "main": "index.js",
   "scripts": {
-    "test": "mocha "
+    "test": "jest"
   },
   "keywords": [
     "cli",
@@ -16,7 +16,9 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.1",
+    "clear": "^0.1.0",
     "commander": "^2.15.1",
+    "figlet": "^1.2.0",
     "inquirer": "^6.0.0"
   },
   "devDependencies": {
