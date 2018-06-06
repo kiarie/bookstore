@@ -56,13 +56,13 @@ describe("TEST CASE #2", () => {
     afterAll(() => {
         books = {}, charges = {}
     })
-    test("Story One: customer is Charged Rs 1 per day per book", () => {
+    test("Story One: Should work fine since this case charges a flat rate for all books", () => {
         expect(compute.regularBooks(books, charges)).toBe(7)
     })
-    test("Story Two: Should fail with wrong type of book passed needed for computing price", () => {
+    test("Story Two: Should return NaN with wrong type of book passed needed for computing price", () => {
         expect(compute.differentBooks(books, charges)).toBeNaN()
     })
-    test("Story Three: Should fail with wrong type of book passed needed for compute", () => {
+    test("Story Three: Should Return NaN with wrong type of book passed needed for compute", () => {
         expect(compute.differentBookOffers(books, charges)).toBeNaN()
     })
 })

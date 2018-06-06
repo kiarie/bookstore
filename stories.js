@@ -14,7 +14,7 @@ module.exports = {
                 if (answer) { firststory() } //if answer is yes i.e true repeat selection new of book to rent
                 else {
                     var total = compute.regularBooks(booksBought, charges)
-                    return console.log(chalk.yellow.bold("Total Cost of Books chosen:", total))
+                    return console.log(chalk.yellow.bold("Total Cost of Books chosen: Rs.", total))
                 }
             })
         })
@@ -31,13 +31,29 @@ module.exports = {
                     if (answer) { secondStory() } //if answer is yes i.e true repeat selection new of book to rent
                     else {
                         var total = compute.differentBooks(booksBought, charges)
-                        return console.log(chalk.yellow.bold("Total Cost of Books chosen:", total))
+                        return console.log(chalk.yellow.bold("Total Cost of Books chosen: Rs.", total))
                     }
                 })
             })
-
         })
-
+    },
+    thirdStory: function thirdStory() {
+        inquires.chooseCategory().then((category) => {
+            var store = Store.books.filter((elemn) => elemn.type == category.type)
+            inquires.chooseBooks(store).then((book) => {
+                if (checkIsInCart(book, booksBought)) {//if the book already exists in cart do not add it again
+                    booksBought.push(Object.assign(book, { type: category.type }));//make sure the type is passed for computation
+                    //so that it pushes something like { name: 'book-fiction', duration: '2', type: 'fiction' }
+                }
+                inquires.chooseAnother().then((answer) => {
+                    if (answer) { thirdStory() } //if answer is yes i.e true repeat selection new of book to rent
+                    else {
+                        var total = compute.differentBookOffers(booksBought, charges)
+                        return console.log(chalk.yellow.bold("Total Cost of Books chosen: Rs.", total))
+                    }
+                })
+            })
+        })
     }
 }
 function checkIsInCart(book, booksBought) {

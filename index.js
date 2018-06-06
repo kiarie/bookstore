@@ -29,6 +29,9 @@ return inquire.prompt(questions).then((answers) => {
         case 'Story Two':
             return story.secondStory()
             break;
+        case 'Story Three':
+            return story.thirdStory()
+            break;
         default:
             console.log(chalk.yellow("Default Choice Picked!"))
             break;
