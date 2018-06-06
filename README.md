@@ -19,8 +19,8 @@ Rs if days rented is less than 3 days.
 
 > To run tests do **npm test** in the commandline
 -----
-###First View 
+### First View 
 ![firstpage](/images/first.png)
 
-###Sample
+### Sample
 ![sample](/images/bookstore.png)
