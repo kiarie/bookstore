@@ -18,3 +18,9 @@ as Rs 2 if days rented is less than 2 days. Similarly for Novel minimum charges 
 Rs if days rented is less than 3 days.
 
 > To run tests do **npm test** in the commandline
+-----
+###First View 
+![firstpage](/images/first.png)
+
+###Sample
+![sample](/images/bookstore.png)
