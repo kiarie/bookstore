@@ -17,7 +17,7 @@ module.exports = {
                 type: 'input',
                 message: 'Days of Renting the Book:',
                 validate: function (value) {
-                    return (isNaN(value)) ? 'Please enter a Number for Duration' : true;
+                    return (isNaN(value) || value.length < 1) ? 'Please enter a Number for Duration' : true;
                 }
             }
         ]
